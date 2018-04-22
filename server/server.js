@@ -7,19 +7,14 @@ const path = require('path');
 const app = express();
 let server = http.createServer(app);
 
-
 const publicPath = path.resolve(__dirname, '../public');
 const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
-// Esta es la comunicación del backend
+// IO = esta es la comunicacion del backend
 module.exports.io = socketIO(server);
-
 require('./sockets/socket');
-
-
-
 
 
 
